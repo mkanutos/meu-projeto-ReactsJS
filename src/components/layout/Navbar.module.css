@@ -1,0 +1,8 @@
+.list {
+    display:  flex;
+    list-style: none;
+}
+
+.iet {
+    margin-right: 1em;
+}
