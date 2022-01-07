@@ -1,38 +1,36 @@
-import React, {Fragment}from 'react';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import Home from './pages/Home';
-import Empresa from './pages/Empresa';
-import Contato from './pages/Contato';
+import React, {Fragment} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './components/pages/Home';
+import Company from './components/pages/Company';
+import Contact from './components/pages/Contact';
+import NewProject from './components/pages/NewProject';
+import Projects from './components/pages/Projects';
 
-function App() {
+// import Container from './components/Layout/Container';
+import Navbar from './components/Layout/Navbar';
+import Footer from './components/Layout/Footer';
 
-  return (
+const App = () => {
+  return ( 
+
     <Router>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/empresa">Empresa</Link>
-        </li>
-        <li>
-          <Link to="/contato">Contato</Link>
-        </li>
-      </ul>
-      <Fragment>
-      <Routes>
-        <Route exact path="/" element={Home}>
-         {/*  <Home /> */}
-        </Route>
-        <Route path="/empresa" element={Empresa}>
-         {/*  <Empresa /> */}
-        </Route>
-        <Route path="/contato" element={Contato}>
-         {/*  <Contato /> */}
-        </Route>
-      </Routes>
-      </Fragment>
+    <Navbar />
+        <Routes>
+                <Route exact path="/" element={<Home/>}>
+                </Route>
+                <Route exact path="/projects" element={<Projects/>}>
+                </Route>
+                <Route exact path="/company" element={<Company/>}>
+                </Route>
+                <Route exact path="/contact" element={<Contact/>}>
+                </Route>
+                <Route exact path="/newproject" element={<NewProject/>}>
+                </Route> 
+            
+        </Routes>
+        <Footer /> 
     </Router>
+
   )
 }
 
